@@ -1,0 +1,95 @@
+<% layout('layouts/boilerplate') %>
+    <form action="/jobs/<%=job._id%>?_method=PUT" method="POST">
+        <!-- <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="job[title]" value="<%=job.title%>">
+        </div>
+        <div>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="job[location]" value="<%= job.location%>">
+        </div>
+		<div>
+            <label for="location">Pay per session</label>
+            <input type="text" id="pay" name="job[pay]" value="<%= job.pay%>">
+        </div>
+		<div>
+            <label for="location">Duration per session (minutes)</label>
+            <input type="text" id="duration" name="job[duration]" value="<%= job.duration%>">
+        </div>
+		<div>
+            <label for="location">Image Url</label>
+            <input type="text" id="image" name="job[image]" value="<%= job.image%>">
+        </div>
+		<div>
+            <label for="location">Description</label>
+            <input type="text" id="description" name="job[description]" value="<%= job.description%>">
+        </div> -->
+		
+		<div class="row g-3">
+			<h1 class="text-center"> Edit Your Job Posting </h1>
+			<div class="col-6 offset-3">
+				<form action="/jobs" method="POST" novalidate class="validated-form">
+					<div class="mb-3">
+						<label class="form-label" for="title">Job Title</label>
+						<input class="form-control" type="text" id="title" name="job[title]" value="<%= job.title%>" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="location">Location</label>
+						<input class="form-control" type="text" id="location" name="job[location]" value="<%= job.location%>" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+					</div>
+		
+					<div class="mb-3">
+						<label class="form-label" for="pay">Pay per session </label>
+						<div class="input-group">
+							<span class="input-group-text" id="pay-label">$</span>
+							<input type="text" class="form-control" id="pay" name="job[pay]" value="<%= job.pay%>" placeholder="0" aria-label="Amount (to the nearest dollar)" required>
+							<span class="input-group-text">.00</span>
+						</div>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="duration">Duration per session (minutes)</label>
+						<input class="form-control" type="text" id="duration" name="job[duration]" value="<%= job.duration%>" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="image">Image Url</label>
+						<input class="form-control" type="text" id="image" name="job[image]" value="<%= job.image%>" required>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="description">Description</label>
+						<textarea class="form-control" type="text" id="Description" name="job[description]" required><%= job.description %></textarea>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+					</div>
+		
+		
+					<div class="mb-3">
+						<button class="btn btn-dark">Update Job</button>
+					</div>
+
+				</form>
+				<a href="/jobs/<%= job._id%>">Back To Your Job</a>
+				<!-- </form>
+				<a href="/jobs">All Jobs</a> -->
+			</div>
+		</div>
+		
+
+        <!-- <button>Update Job</button> -->
+    <!-- </form>
+    <a href="/jobs/<%= job._id%>">Back To Job</a> -->

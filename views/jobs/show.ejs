@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate') %>
+	
+
+<div class="row">
+	<div class="col-6 offset-3">
+		<div class="card">
+			<img src="<%= job.image %>" class="card-img-top" alt="...">
+			<div class="card-body">
+			    <h5 class="card-title"><%= job.title %></h5>
+			    <p class="card-text"><%= job.description %></p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item text-muted"><%= job.location %></li>
+			    <li class="list-group-item">$<%= job.pay %> / session</li>
+			    <li class="list-group-item"><%= job.duration %> minutes / session</li>
+			</ul>
+			<div class="card-body">
+			    <a class="card-link btn btn-warning" href="/jobs/<%=job._id%>/edit">Edit</a>
+				<form class="d-inline" action="/jobs/<%=job._id%>?_method=DELETE" method="POST">
+					<button class="btn btn-danger">Delete</button>
+				</form>
+			</div>
+			<div class="card-footer text-muted">
+				2 days ago
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <h1><%= job.title %></h1>
+    <h2><%= job.location %></h2>
+	<img class="img-fluid" alt="" src="<%=job.image%>">
+	<p><%= job.duration %> minutes per session</p>
+	<p>$<%= job.pay %> per session</p>
+	<p><%= job.description %></h2></p>
+
+	<p> <a href="/jobs/<%=job._id%>/edit">Edit</a>
+    </p>
+    <p>
+    <form action="/jobs/<%=job._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+    </p>
+    <footer>
+        <a href="/jobs">All Jobs</a>
+    </footer> -->
+
+
+
+

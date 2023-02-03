@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+<!-- everything below will be placed in body part of boilerpart  -->
+	<h1>All Jobs</h1>
+	<div>
+        <a href="/jobs/new">Add Job</a>
+    </div>
+		
+<% for (let job of jobs) {%>
+<!-- <li><a href="/jobs/<%= job._id %>"><%= job.title %></a></li> -->		
+	<div class="card" mb-3>
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img-fluid" alt="" src="<%=job.image%>">
+			</div>
+
+			<div class="col-md-8">
+				<div class="card-body">
+					<h5 class="card-title"><%= job.title %></h5>
+					<p class="card-text"><%= job.description %></p>
+					<p class="card-text">
+						<small class="muted"><%= job.location %></small>
+					</p>
+					<a class="btn btn-primary" href="/jobs/<%=job._id %>"> Check <%= job.title %> </a>
+				</div>
+			</div>
+		</div>	
+	</div>
+<% }%>
+	
